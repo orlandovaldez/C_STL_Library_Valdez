@@ -14,6 +14,8 @@ create a single main.cpp that contains code samples and implementations of each 
 #include <set>
 #include <utility>
 #include <map>
+#include <vector>
+
 
 using namespace std; 
 typedef map<string, int> MapT;
@@ -152,8 +154,8 @@ int main()
     iset.insert(55);
   }
   assert(iset.size() == 4 );
-  set<int> :: iterator it;
-  for(it = iset.begin(); it != iset.end(); it++)// displays out the set and the values coresponding to it 
+  set<int> :: iterator it1;
+  for(it1 = iset.begin(); it1 != iset.end(); it1++)// displays out the set and the values coresponding to it 
   {
     cout << " " << *it;
   }
@@ -181,8 +183,8 @@ int main()
     //Write the code as presented in: 14. std::map::insert
   MapT amap; 
   pair< MapIterT, bool > result =
-      amap.insert(make_pair("Fred", 45));
-    assert(result.second == true);
+      amap.insert(make_pair("Fred", 45));// inserts a pait with a string and an integer
+    assert(result.second == true);// second part of the pair is validated as true or false
     assert(result.first->second == 45);
     result = amap.insert(make_pair( "Fred", 54));
     assert(result.second == false);
@@ -192,8 +194,8 @@ int main()
 
     /****Section_Name****Map_Summary*/
     //Write the code as presented in: 16. Map summary
-  map<string, string> phone_book;
-  phone_book["411"] = "Directory";
+  map<string, string> phone_book; //vector string is initated with values being placed as strings
+  phone_book["411"] = "Directory"; // value is added to the element 
   phone_book["911"] = "Emergency";
   phone_book["508-678-2811"] = "BCC";
   if (phone_book.find("411") != phone_book.end())
@@ -205,11 +207,20 @@ int main()
       )
     );
   }
+  assert(phone_book.size() == 3);// sixe of the array is established
+  map<string, string > :: const_iterator it2;
+  for( it2 = phone_book.begin(); it2 != phone_book.end(); ++it2)// value and element is called and displayed out to the user
+  {
+    cout << " " << it2->first << " " << it2->second << endl;
+  };
     //Write comments that help one better understand what the code is doing.
 
     /****Section_Name**** Sort_Algorithm*/
     //Write the code as presented in: 23. sort example
-
+  int arr[100]; // initialize array with 100 value 
+  sort( arr, arr + 100); // sort the array from 1st to 100th value
+  vector v1; // esablishes vector 
+  sort (v1.begin(), v1.end();// sort the vector from the beginging to the end
     //Write comments that help one better understand what the code is doing.
 
     /****Section_Name****Predicate_Algorithm*/
